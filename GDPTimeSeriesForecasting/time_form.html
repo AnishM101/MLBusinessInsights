@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Time Series Forecasting Model</title>
+    <link rel = "stylesheet" href = "{{ url_for('time_app.form_styles') }}">
+</head>
+<body>
+    <div class = "container">
+        <h1>GDP Time Series Forecasting</h1>
+        <form action = "{{ url_for('time_app.predict') }}" method = "post">
+            <p>
+                Predict the GDP for the year 
+                <select id = "year1" name = "year1" required>
+                    <option value = "" disabled selected>*</option>
+                    <option value = "1">1</option>
+                    <option value = "2">2</option>
+                </select>
+                <select id = "year2" name = "year2" required>
+                    <option value = "" disabled selected>*</option>
+                    <option value = "0">0</option>
+                    <option value = "1">1</option>
+                    <option value = "2">2</option>
+                    <option value = "3">3</option>
+                    <option value = "4">4</option>
+                    <option value = "5">5</option>
+                    <option value = "6">6</option>
+                    <option value = "7">7</option>
+                    <option value = "8">8</option>
+                    <option value = "9">9</option>
+                </select>
+                <select id = "year3" name = "year3" required>
+                    <option value = "" disabled selected>*</option>
+                    <option value = "0">0</option>
+                    <option value = "1">1</option>
+                    <option value = "2">2</option>
+                    <option value = "3">3</option>
+                    <option value = "4">4</option>
+                    <option value = "5">5</option>
+                    <option value = "6">6</option>
+                    <option value = "7">7</option>
+                    <option value = "8">8</option>
+                    <option value = "9">9</option>
+                </select>
+                <select id = "year4" name = "year4" required>
+                    <option value = "" disabled selected>*</option>
+                    <option value = "0">0</option>
+                    <option value = "1">1</option>
+                    <option value = "2">2</option>
+                    <option value = "3">3</option>
+                    <option value = "4">4</option>
+                    <option value = "5">5</option>
+                    <option value = "6">6</option>
+                    <option value = "7">7</option>
+                    <option value = "8">8</option>
+                    <option value = "9">9</option>
+                </select>
+                and the 
+                <select name = "quarter">
+                    <option value = "" disabled selected>*</option>
+                    <option value = "1">1st</option>
+                    <option value = "2">2nd</option>
+                    <option value = "3">3rd</option>
+                    <option value = "4">4th</option>
+                </select>
+                quarter.
+            </p>
+            <button type = "submit">Predict GDP</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Churn Prediction Model</title>
+    <link rel = "stylesheet" href = "{{ url_for('churn_app.form_styles') }}">
+</head>
+<body>
+    <div class = "container">
+        <h1>Bank Churn Prediction</h1>
+        <form action = "{{ url_for('churn_app.predict') }}" method = "post">
+            <div class = "form-group">
+                <label for = "CreditScore">Credit Score:</label>
+                <input type = "text" id = "CreditScore" name = "CreditScore">
+            </div>
+            <div class = "form-group">
+                <label for = "Gender">Gender:</label>
+                <select id = "Gender" name = "Gender" required>
+                    <option value = "" disabled selected>Select Gender</option>
+                    <option value = "0">Female</option>
+                    <option value = "1">Male</option>
+                </select>
+            </div>
+            <div class = "form-group">
+                <label for = "Age">Age:</label>
+                <input type = "text" id = "Age" name = "Age">
+            </div>
+            <div class = "form-group">
+                <label for = "Tenure">Tenure:</label>
+                <input type = "text" id = "Tenure" name = "Tenure">
+            </div>
+            <div class = "form-group">
+                <label for = "Balance">Balance:</label>
+                <input type = "text" id = "Balance" name = "Balance">
+            </div>
+            <div class = "form-group">
+                <label for = "NumOfProducts">Number Of Products:</label>
+                <input type = "text" id = "NumOfProducts" name = "NumOfProducts">
+            </div>
+            <div class = "form-group">
+                <label for = "HasCrCard">Has Credit Card:</label>
+                <select id = "HasCrCard" name = "HasCrCard" required>
+                    <option value = "" disabled selected>Select Option</option>
+                    <option value = "0">No</option>
+                    <option value = "1">Yes</option>
+                </select>
+            </div>
+            <div class = "form-group">
+                <label for = "IsActiveMember">Is Active Member:</label>
+                <select id = "IsActiveMember" name = "IsActiveMember" required>
+                    <option value = "" disabled selected>Select Option</option>
+                    <option value = "0">No</option>
+                    <option value = "1">Yes</option>
+                </select>
+            </div>
+            <div class = "form-group">
+                <label for = "EstimatedSalary">Estimated Salary:</label>
+                <input type = "text" id = "EstimatedSalary" name = "EstimatedSalary">
+            </div>
+            <input type = "submit" value = "Predict">
+        </form>
+    </div>
+</body>
+</html>

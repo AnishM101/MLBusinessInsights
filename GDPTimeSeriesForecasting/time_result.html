@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Time Series Forecast Result</title>
+    <link rel = "stylesheet" href = "{{ url_for('time_app.result_styles') }}">
+</head>
+<body>
+    <div class = "container">
+        <h1>Time Series Forecast Results</h1>
+        <p>Predicted GDP for {{ year }} Q{{ quarter }} is shown in the graph below:</p>
+        <div class = "graph-container">
+            <img src = "{{ url_for('time_app.serve_image', filename = plot_filename) }}" alt = "GDP Forecast Plot">
+        </div>
+        <button onclick = "window.location.href = '/';">Back To Home</button>
+    </div>
+</body>
+</html>
