@@ -1,0 +1,115 @@
+body {
+    background: linear-gradient(115deg, #222831, #393E46);
+    color: #EEEEEE;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+    overflow-y: auto;
+    padding-top: 20px;
+}
+
+.container {
+    background: #1F1F1F;
+    border-radius: 10px;
+    padding: 20px 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #00ADB5;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px #00ADB5, 0 0 10px #00ADB5;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input[type = "text"], input[type = "number"], select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #00ADB5;
+    outline: none;
+    box-sizing: border-box;
+    background: #222831;
+    color: #EEEEEE;
+    transition: border-color 0.3s;
+}
+
+input[type = "text"]:focus, input[type = "number"]:focus, select:focus {
+    border-color: #00FFF5;
+}
+
+.custom-select {
+    position: relative;
+}
+
+.custom-select select {
+    appearance: none;
+    background: #222831;
+    color: #EEEEEE;
+    padding-right: 30px;
+    border-radius: 5px;
+}
+
+.custom-select::after {
+    content: '▼';
+    font-size: 14px;
+    color: #00ADB5;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+input[type = "submit"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #00ADB5;
+    color: #222831;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type = "submit"]:hover {
+    background: #00FFF5;
+}
+
+input[type = "submit"]:active {
+    background: #00999A;
+}
+
+input[type = "text"]::placeholder, input[type = "number"]::placeholder {
+    color: #9E9E9E;
+}
+
+@media(max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Sales Prediction Model</title>
+    <link rel = "stylesheet" href = "{{ url_for('sales_app.form_styles') }}">
+</head>
+<body>
+    <div class = "container">
+        <h1>Grocery Sales Prediction</h1>
+        <form action = "{{ url_for('sales_app.predict') }}" method = "post">
+            <div class = "form-group">
+                <label for = "ItemWeight">Item Weight (ounces):</label>
+                <input type = "text" id = "ItemWeight" name = "ItemWeight">
+            </div>
+            <div class = "form-group">
+                <label for = "ItemFatContent">Item Fat Content:</label>
+                <select id = "ItemFatContent" name = "ItemFatContent" required>
+                    <option value = "" disabled selected>Select Fat Content</option>
+                    <option value = "1">Low Fat</option>
+                    <option value = "2">High Fat</option>
+                </select>
+            </div>
+            <div class = "form-group">
+                <label for = "ItemVisibility">Item Store Shelf Proportion:</label>
+                <input type = "text" id = "ItemVisibility" name = "ItemVisibility">
+            </div>
+            <div class = "form-group">
+                <label for = "ItemType">Item Type:</label>
+                <select id = "ItemType" name = "ItemType" required>
+                    <option value = "" disabled selected>Select Item Type</option>
+                    <option value = "1">Snacks</option>
+                    <option value = "2">Fruits and Vegetables</option>
+                    <option value = "3">Household Products</option>
+                    <option value = "4">Frozen Foods</option>
+                    <option value = "5">Baking Goods</option>
+                    <option value = "6">Dairy</option>
+                    <option value = "7">Meat</option>
+                    <option value = "8">Drinks</option>
+                    <option value = "9">Breads</option>
+                    <option value = "10">Starchy Foods</option>
+                    <option value = "11">Breakfast Foods</option>
+                    <option value = "12">Other</option>
+                </select>
+            </div>
+            <div class = "form-group">
+                <label for = "ItemMRP">Item Maximum Retail Price:</label>
+                <input type = "text" id = "ItemMRP" name = "ItemMRP">
+            </div>
+            <div class = "form-group">
+                <label for = "OutletSize">Outlet Size:</label>
+                <select id = "OutletSize" name = "OutletSize" required>
+                    <option value = "" disabled selected>Select Outlet Size</option>
+                    <option value = "1">Small</option>
+                    <option value = "2">Medium</option>
+                    <option value = "3">Large</option>
+                </select>
+            </div>
+            <div class = "form-group">
+                <label for = "YearsSinceEstablishment">Years Since Outlet Establishment:</label>
+                <input type = "text" id = "YearsSinceEstablishment" name = "YearsSinceEstablishment">
+            </div>
+            <input type = "submit" value = "Predict">
+        </form>
+    </div>
+</body>
+</html>

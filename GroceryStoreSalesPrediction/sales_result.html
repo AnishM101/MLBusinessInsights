@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Sales Prediction Result</title>
+    <link rel = "stylesheet" href = "{{ url_for('sales_app.result_styles') }}">
+</head>
+<body>
+    <div class = "result-container">
+        <h1>Sales Prediction Result</h1>
+        <p class = "result-message">
+            The predicted sales revenue proxy is <strong>${{ prediction }}</strong>.
+        </p>
+        <button onclick = "window.location.href = '/';">Back To Home</button>
+    </div>
+</body>
+</html>
