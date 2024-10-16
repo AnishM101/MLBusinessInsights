@@ -60,20 +60,6 @@ def predict():
         print(f'Error: {e}')
         return jsonify({'error': str(e)}), 500
 
-@time_app.route('/result/<int:year>/<int:quarter>', methods = ['GET'])
-def result(year, quarter):
-    filename = request.args.get('plot_filename', '')
-    filepath = os.path.join('GDPTimeSeriesForecasting', filename)
-
-    if not os.path.exists(filepath):
-        return jsonify({'error': 'Plot not found'}), 404
-    
-    return render_template('time_result.html', year = year, quarter = quarter, filename = filename)
-
-@time_app.template_filter()
-def format_value(value):
-    return f"{value:,.2f}"
-
 @time_app.route('/time_form.css')
 def form_styles():
     return send_from_directory(os.path.join(os.getcwd(), 'GDPTimeSeriesForecasting'), 'time_form.css')
