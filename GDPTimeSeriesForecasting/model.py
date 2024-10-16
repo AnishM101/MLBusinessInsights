@@ -13,25 +13,19 @@ df = pd.read_csv('GDPTimeSeriesForecasting/data.csv')
 
 df['Year'] = df['Year-Quarter'].str[:4].astype(int)
 df['Quarter'] = df['Year-Quarter'].str[-1].astype(int)
-df['Lag1'] = df['GDP (Billion USD)'].shift(1)
-df['Lag2'] = df['GDP (Billion USD)'].shift(2)
 df['RollingMean'] = df['GDP (Billion USD)'].rolling(window = 4).mean()
 df['RollingStd'] = df['GDP (Billion USD)'].rolling(window = 4).std()
 df['RollingMin'] = df['GDP (Billion USD)'].rolling(window = 4).min()
 df['RollingMax'] = df['GDP (Billion USD)'].rolling(window = 4).max()
-df['GDPQuarterDiff'] = df['GDP (Billion USD)'].diff(1)
-df['GDPYearDiff'] = df['GDP (Billion USD)'].diff(4)
-df['QuarterSin'] = np.sin(2 * np.pi * df['Quarter'] / 4)
-df['QuarterCos'] = np.cos(2 * np.pi * df['Quarter'] / 4)
 
 df.drop('Year-Quarter', axis = 1, inplace = True)
 
 df.dropna(inplace = True)
 
 cat_cols = ['Quarter']
-num_cols = ['Year', 'Lag1', 'Lag2', 'RollingMean', 'RollingStd', 'RollingMin', 'RollingMax', 'GDPQuarterDiff', 'GDPYearDiff', 'QuarterSin', 'QuarterCos']
+num_cols = ['Year', 'RollingMean', 'RollingStd', 'RollingMin', 'RollingMax']
 
-crit_features = ['Year', 'Quarter', 'Lag1', 'Lag2', 'RollingMean', 'RollingStd', 'RollingMin', 'RollingMax', 'GDPQuarterDiff', 'GDPYearDiff', 'QuarterSin', 'QuarterCos']
+crit_features = ['Year', 'Quarter', 'RollingMean', 'RollingStd', 'RollingMin', 'RollingMax']
 
 X = df[crit_features]
 y = df['GDP (Billion USD)']
