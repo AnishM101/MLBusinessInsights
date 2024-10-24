@@ -33,7 +33,8 @@ def predict():
 
         if not existing_record.empty:
             actual_gdp = existing_record['GDP (Billion USD)'].values[0]
-            return render_template('time_result.html', year=year, quarter=quarter, gdp=actual_gdp, type="Actual")
+            formatted_gdp = round(float(actual_gdp), 2)
+            return render_template('time_result.html', year=year, quarter=quarter, gdp=formatted_gdp, type="Actual")
         else:
             def generate_features(df):
                 rolling_mean = df['GDP (Billion USD)'].rolling(window = 4).mean().iloc[-1]
@@ -52,9 +53,10 @@ def predict():
 
             input_data = pd.DataFrame(generate_features(df))
             preprocessed_features = model.named_steps['preprocessor'].transform(input_data)
-            prediction = model.named_steps['ridge'].predict(preprocessed_features)[0]
+            forecast = model.named_steps['ridge'].predict(preprocessed_features)[0]
+            formatted_gdp = round(float(forecast), 2)
 
-            return render_template('time_app.result', year = year, quarter = quarter, gdp = prediction, type = "Forecast")
+            return render_template('time_result.html', year = year, quarter = quarter, gdp = formatted_gdp, type = "Forecast")
 
     except Exception as e:
         print(f'Error: {e}')
