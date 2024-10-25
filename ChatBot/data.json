@@ -1,8 +1,36 @@
 {
-    "training_data": [
-        {}
-    ],
-    "responses": {
-        "": []
-    }
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi",
+                "Hello",
+                "Hey"
+            ],
+            "response": [
+                "Hi! How can I help you?"
+            ]
+        },
+        {
+            "tag": "farewell",
+            "patterns": [
+                "Bye",
+                "Goodbye"
+            ],
+            "response": [
+                "Bye! Have a great day!"
+            ]
+        },
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Thank you",
+                "Thanks",
+                "Thanks for the help"
+            ],
+            "response": [
+                "No problem! Let me know if you have anymore questions!"
+            ]
+        }
+    ]
 }
