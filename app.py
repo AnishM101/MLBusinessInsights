@@ -25,7 +25,12 @@ def home_styles():
 @app.route('/chat', methods = ['POST'])
 def chat():
     user_input = request.json.get('message')
-    response = model.predict([user_input])[0]
+    if not user_input:
+        return jsonify({"response": "Sorry, I didn't get that. Could you rephrase?"})
+    
+    predicted_class_index = model.predict([user_input])[0]
+    response = model.named_steps['labelencoder'].inverse_transform([predicted_class_index])[0]
+
     return jsonify({'response': response})
 
 if __name__ == '__main__':
