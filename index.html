@@ -5,6 +5,7 @@
     <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>ML Business Insights</title>
     <link rel = "stylesheet" href = "styles.css">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -29,5 +30,13 @@
             <h1>ML Business Insights</h1>
         </div>
     </main>
+    <div class = "chat-icon">
+        <i class = "fa-solid fa-comment fa-fade"></i>
+    </div>
+    <div id="chat-window" class="chat-window">
+        <div id="chat-messages" class="chat-messages"></div>
+        <input type="text" id="user-input" placeholder="Type your message..." />
+        <button id="send-button">Send</button>
+    </div>
 </body>
 </html>
