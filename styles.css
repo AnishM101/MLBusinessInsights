@@ -155,3 +155,7 @@ button {
     padding: 10px;
     cursor: pointer;
 }
+
+.chat-window.visible {
+    display: flex;
+}

@@ -1,4 +1,4 @@
-document.getElementById('chat-icon').addEventListener('click', function() {
+document.querySelector('.chat-icon').addEventListener('click', function() {
     const chatWindow = document.getElementById('chat-window');
     chatWindow.classList.toggle('visible');
 });
