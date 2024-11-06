@@ -22,7 +22,7 @@ def home():
 def home_styles():
     return send_from_directory('.', 'styles.css')
 
-@app.route('/ChatBot/app.js')
+@app.route('/app.js')
 def chatbot_js():
     return send_from_directory('ChatBot', 'app.js')
 
