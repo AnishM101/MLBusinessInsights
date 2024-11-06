@@ -1,6 +1,7 @@
-document.querySelector('.chat-icon').addEventListener('click', function() {
+document.getElementById('chat-icon').addEventListener('click', function() {
     const chatWindow = document.getElementById('chat-window');
     chatWindow.classList.toggle('visible');
+    console.log("Chat icon clicked")
 });
 
 document.getElementById('send-button').addEventListener('click', async function() {
@@ -27,7 +28,8 @@ document.getElementById('send-button').addEventListener('click', async function(
         chatMessages.innerHTML += `<div class="bot-message">${data.response}</div>`;
 
         chatMessages.scrollTop = chatMessages.scrollHeight;
-    } catch (error) {
+    }
+    catch (error) {
         console.error('Error:', error);
         chatMessages.innerHTML += `<div class="bot-message">Error: Unable to connect to the chatbot.</div>`;
     }
