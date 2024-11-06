@@ -24,7 +24,7 @@ def home_styles():
 
 @app.route('/app.js')
 def chatbot_js():
-    return send_from_directory('ChatBot', 'app.js')
+    return send_from_directory('.', 'app.js')
 
 @app.route('/chat', methods = ['POST'])
 def chat():
